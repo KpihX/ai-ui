@@ -1,4 +1,4 @@
-.PHONY: help install start stop logs status push build publish
+.PHONY: help install start stop logs status push
 
 # Default target
 help:
@@ -10,8 +10,6 @@ help:
 	@echo "  make logs      — follow live logs"
 	@echo "  make status    — show service status"
 	@echo "  make push      — commit + push to github + gitlab"
-	@echo "  make build     — build package (uv build)"
-	@echo "  make publish   — publish package (uv publish)"
 
 # --- Service Management ---
 
@@ -38,10 +36,3 @@ push:
 	git push github HEAD
 	git push gitlab HEAD
 
-# --- Package (uv) ---
-
-build:
-	uv build
-
-publish:
-	uv publish
